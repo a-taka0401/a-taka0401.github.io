@@ -24,11 +24,11 @@
           src="./assets/cake.gltf"
         ></a-asset-item>
       </a-assets> -->
-      <!-- <a-assets timeout="10000">
+      <a-assets timeout="10000">
         <a-asset-item id="cake_obj" src="./assets/cake.obj"></a-asset-item>
         <a-asset-item id="cake_mtl" src="./assets/cake.mtl"></a-asset-item>
       </a-assets>
-      <a-obj-model src="#cake_obj" mtl="#cake_mtl" position="0 0 -6" rotation="0 -20 0"></a-obj-model> -->
+      <a-obj-model src="#cake_obj" mtl="#cake_mtl" position="0 0 -6" rotation="0 -20 0"></a-obj-model>
       <a-marker
         type="pattern"
         preset="custom"
@@ -39,8 +39,7 @@
       >
         <a-entity
           class="clickable"
-          gltf-model="obj: url(https://arjs-cors-proxy.herokuapp.com/https://fuga.github.io/rock/Rock1.obj);
-          mtl: url(https://arjs-cors-proxy.herokuapp.com/https://fuga.github.io/rock/Rock1.mtl)"
+          gltf-model="#cake_obj"
           scale="1.6 1.6 1.6"
           gesture-handler
         ></a-entity>
