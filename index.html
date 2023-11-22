@@ -18,13 +18,17 @@
       embedded
       gesture-detector
     >
-      <a-assets>
+      <!-- <a-assets>
         <a-asset-item
           id="cake"
           src="./assets/cake.gltf"
         ></a-asset-item>
+      </a-assets> -->
+      <a-assets timeout="10000">
+        <a-asset-item id="cake_obj" src="./assets/cake.obj"></a-asset-item>
+        <a-asset-item id="cake_mtl" src="./assets/cake.mtl"></a-asset-item>
       </a-assets>
-
+      <a-obj-model src="#cake_obj" mtl="#cake_mtl" position="0 0 -6" rotation="0 -20 0"></a-obj-model>
       <a-marker
         type="pattern"
         preset="custom"
@@ -35,7 +39,7 @@
       >
         <a-entity
           class="clickable"
-          gltf-model="#cake"
+          gltf-model="#cake_obj"
           scale="1.6 1.6 1.6"
           gesture-handler
         ></a-entity>
