@@ -14,14 +14,17 @@
 │   └── index.html（AR.js 用のコード）
 │
 └── model_viewer/
-    ├── mv_model/
-    │   ├── fried_rice/
-    │   │   ├── 3d.usdz
-    │   │   ├── 3d.glb
-    │   │   └── index.html
-    │   └── ...（QuickLook などで使う 3D モデルとHTML）
-    ├── k_mv.html（からあげ君 QuickLook 用のコード）
-    └── mv.html（コーヒー QuickLook 用のコード）
+    ├── mock/
+    │   ├── model/
+    │   ├── index.html（コーヒー QuickLook 用のコード）
+    │   └── k_index.html（からあげ君 QuickLook 用のコード）
+    └── prod_mock/
+        ├── fried_rice/
+        │   ├── 3d.usdz
+        │   ├── 3d.glb
+        │   └── index.html
+        └── ...（QuickLook などで使う 3D モデルとHTML）
+
 ```
 
 ### 3D モデルの準備状況
@@ -36,8 +39,11 @@
 
 ### model-viewer 使い方
 
+mock フォルダに過去の打ち合わせでお見せした物が入っており prod_mock フォルダにラボでスキャンした製品のソースが入っています。  
+prod_mock フォルダにラボでスキャンした製品は製品ごとにフォルダ分けをしてその中にその製品の 3D モデルと HTML が入っています。
+
 1. S3 など静的ホスティングサービスにファイルをアップロードします。
-2. ドメイン/model_viewer/hogehoge.html とするとモックにアクセスができます。
+2. ドメイン/model_viewer/prod_mock/fried_rice/index.html とすると唐揚げチャーハンのモックにアクセスができます。
 
 ### AR.js 使い方
 
@@ -45,4 +51,4 @@
 2. 1 で作った画像を元に AR マーカーの画像ファイルと patt ファイルを作成します。([ここなどを利用](https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html))
 3. 2 で作った patt ファイルをこのリポジトリ内の'assets/marker.patt'と置き換えます
 4. S3 など静的ホスティングサービスにファイルをアップロードします。
-5. ドメイン/ar_js/hogehoge.html にアクセスすると表示されるカメラで AR マーカーを読み取ると３ D モデルが表示されます。
+5. ドメイン/ar_js/index.html にアクセスすると表示されるカメラで AR マーカーを読み取ると３ D モデルが表示されます。
